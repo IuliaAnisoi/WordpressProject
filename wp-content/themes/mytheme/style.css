@@ -1,0 +1,66 @@
+/*
+Theme Name: Photography blog
+Text Domain: Photography blog
+Version: 1.0
+Description: Photography blog template
+Author: Iulia
+*/
+
+html {
+	margin-top: 0px!important;
+}
+
+
+.logo{
+	font-size: 16px;
+	text-decoration: none;
+}
+.navbar a {
+	float: right;
+  font-size: 12px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.header {
+  background-color: #F5F5F5;
+  display: flex;
+  height: 70px;
+}
+
+
+/* Main */
+.main > .container {
+  display: flex;
+  height: 500px;
+  background-color: #F5F5F5;
+}
+
+/* Footer */
+.footer {
+  background-color: #F5F5F5;
+  display: flex;
+  height: 200px;
+}
+
+/*  Social icons in footer */
+.social {
+  margin: 0;
+  padding-top: 23px;
+  font-size: 34px;
+}
+
+.fab {
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+}
