@@ -5,8 +5,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blog PhotoGraphy Template">
- 
+	<meta name="description" content="Blog PhotoGraphy Template">
+	<link rel="shortcut icon" href="wp-content/themes/mytheme/assets/images/logo.png"/>
+
+	<!-- CSS -->
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
 	<?php
 		wp_head();
 	?>
@@ -15,29 +19,35 @@
 
 <body>
     
-    <header class="header">	 
     <div class="container">
-			<div class="row">	 	
-				<div class="logo col-6 pt-lg-4">   
-	    			<a class="site-title pt-lg-4 mb-0" href="index.html">PhotoGraphy</a>
-	    		</div>
-        
-			    <div class="navbar col-6  ">
-					  <a href="#home">HOME</a>
-					  <a href="#pages">PAGES</a>
-					  <a href="#gallery">GALLERY</a>
-					  <a href="#shop">SHOP</a>
-					  <a href="#news">NEWS</a>
-					  <a href="#contact">CONTACT</a>
-						<i class="fas fa-shopping-cart"></i>
-					</div>
-			</div>
-		</div>
+		<header class="header">	 
+			<div class="container">
+				<div class="row">	 	
+					<div class="logo col-6 pt-lg-4">  
+						<img class="logo" src="wp-content/themes/mytheme/assets/images/logo.png" alt="logo"/> 
+							<a class="site-title" href="index.html"></a>
 
-    </header>
+							<?php echo get_bloginfo('name')?>
+	    			</div>
+				
+					<?php 
+						wp_nav_menu(
+							array(
+								'menu' => 'primary',
+								'container' => '',
+								'theme_location' => 'primary',
+								'items_wrap' => '<ul id="" class="navbar col-6 pt-lg-4 ">%3$s</ul>'
+							));
+					?>
+
+				</div>
+			</div>
+		</header>
+	</div>
+
     
     <main> 
 		<div class="container">
-					Photo Studiopress 
+				<h1 class="heading"> <?php the_title(); ?></h1>
 		</div>			
 	</main>
