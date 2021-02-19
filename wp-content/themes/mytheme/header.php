@@ -9,7 +9,10 @@
 	<link rel="shortcut icon" href="wp-content/themes/mytheme/assets/images/logo.png"/>
 
 	<!-- CSS -->
-	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Yesteryear&display=swap" rel="stylesheet">
+
 
 	<?php
 		wp_head();
@@ -23,22 +26,23 @@
 		<header class="header">	 
 			<div class="container">
 				<div class="row">	 	
-					<div class="logo col-6 pt-lg-4">  
+					<div class="logo col-sm-4">  
 						<img class="logo" src="wp-content/themes/mytheme/assets/images/logo.png" alt="logo"/> 
 							<a class="site-title" href="index.html"></a>
 
 							<?php echo get_bloginfo('name')?>
 	    			</div>
-				
-					<?php 
-						wp_nav_menu(
-							array(
-								'menu' => 'primary',
-								'container' => '',
-								'theme_location' => 'primary',
-								'items_wrap' => '<ul id="" class="navbar col-6 pt-lg-4 ">%3$s</ul>'
-							));
-					?>
+					<div class="col-sm-8">
+						<?php 
+							wp_nav_menu(
+								array(
+									'menu' => 'primary',
+									'container' => '',
+									'theme_location' => 'primary',
+									'items_wrap' => '<ul id="" class="navbar">%3$s</ul>'
+								));
+						?>
+					</div>
 
 				</div>
 			</div>
@@ -46,8 +50,4 @@
 	</div>
 
     
-    <main> 
-		<div class="container">
-				<h1 class="heading"> <?php the_title(); ?></h1>
-		</div>			
-	</main>
+

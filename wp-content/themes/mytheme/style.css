@@ -6,28 +6,54 @@ Description: Photography blog template
 Author: Iulia
 */
 
-*{
-  font-family: 'Roboto', sans-serif;
+* {
+  font-family: "Roboto", sans-serif;
   background-color: white !important;
 }
 
-.content, h1{
-  font-family: 'Pacifico', cursive;
+.logo,
+.site-title {
+  padding-top: 4px;
+  font-size: 25px;
+  line-height: 24px;
+  font-weight: 400;
+  font-family: "Roboto";
+}
+
+.about-me-section{
+  padding: 40px;
+}
+.about-me,
+h1 {
+  padding: 40px;
+  font-size: 80px;
+  letter-spacing: 5px;
+  line-height: 23px;
+  /* color: #ffffff; */
+  font-weight: 400;
+  font-family: "Yesteryear";
+}
+
+.about-me {
+  padding-bottom: 40px;
+    margin-top: 40px;
+
 }
 
 html {
-  margin-top: 0px!important;
+  margin-top: 0px !important;
 }
 
-
-.site-title{
-	font-size: 18px;
+.site-title {
+  font-size: 25px;
+  line-height: 24px;
+  font-weight: 400;
+  font-family: "Roboto";
   text-decoration: none;
   color: black;
   padding: none;
-  margin: none;  
+  margin: none;
 }
-
 
 .header .navbar a {
   padding-right: 1px !important;
@@ -36,24 +62,23 @@ html {
   font-weight: bold;
   display: inline-block;
   list-style: none;
-  font-size: 12px;
-  color: black;
+  font-size: 14px;
+  line-height: 24px;
+  color: #424242;
+  font-weight: 500;
+  font-family: "Roboto";
   padding-right: 0;
   margin-right: 0;
   text-decoration: none;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-}
 
 /* Header */
 .heading {
   display: flex;
   height: 60px;
+  margin-top: 100px;
 }
-
 
 /* Main */
 .main > .container {
@@ -61,24 +86,135 @@ body {
   height: 500px;
 }
 
+.about-me-description {
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 24px;
+  color: #333333;
+  font-weight: 400;
+  font-family: "Roboto";
+  width: 937px;
+  height: 135px;
+  padding-left:80px;
+}
+.verticalLine{
+  border-left: solid black !important;
+  border-left-width: thin !important;
+  padding-left: 80px;
+}
+
+
+/* Photogrid section */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 10vw);
+    grid-gap: 0;
+}
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display:block;
+}
+
+.gallery__img:hover {
+  transform: scale(1.2);
+  transition:  1000ms linear;
+  vertical-align: middle;
+}
+
+.gallery__item--1 {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.gallery__item--13 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.gallery__item--3 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.gallery__item--4 {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.gallery__item--5 {
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.gallery__item--6 {
+    grid-column-start: 5;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 4;
+}
+.gallery__item--7 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+.gallery__item--8 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+.gallery__item--9 {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+.gallery__item--10 {
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
 /* Footer */
 .footer {
   display: flex;
-  height: 50px;
   font-size: 12px;
-  color: gray;
+  letter-spacing: 1px;
+  line-height: 23px;
+  color: #7e7e7e;
+  font-weight: 400;
+  font-family: "Roboto";
 }
-
+.social-list-about-me{
+   font-size: 12px;
+  letter-spacing: 1px;
+  line-height: 23px;
+  margin-left:30px;
+}
 /*  Social icons in footer */
-.social-list, ul, li {
+.social-list,
+ul,
+li {
   list-style: none;
   display: inline-block;
+  padding-bottom: 30px;
 }
 
-.fab{
+.fab {
   display: inline-block;
-  width: 30px;
-  height: 30px;
   color: gray;
   padding: 5px 5px 5px 5px;
   margin-right: 5px;
@@ -87,19 +223,18 @@ body {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  -moz-box-shadow: 0px 0px 2px #888;
+  /* -moz-box-shadow: 0px 0px 2px #888;
   -webkit-box-shadow: 0px 0px 2px #888;
-  box-shadow: 0px 0px 2px #888;
+  box-shadow: 0px 0px 2px #888; */
 }
 
-.fa-facebook-square{
+.fa-facebook-square {
   color: #1e90ff;
   -moz-box-shadow: 0px 0px 2px #1e90ff;
   -webkit-box-shadow: 0px 0px 2px #1e90ff;
   box-shadow: 0px 0px 2px #1e90ff;
-  
 }
 .fab:hover {
   transform: translateY(-4px);
-  transition:0.3s;
+  transition: 0.3s;
 }
