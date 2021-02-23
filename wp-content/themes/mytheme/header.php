@@ -13,7 +13,6 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Yesteryear&display=swap" rel="stylesheet">
 
-
 	<?php
 		wp_head();
 	?>
@@ -26,8 +25,12 @@
 		<header class="header">	 
 			<div class="container">
 				<div class="row">	 	
-					<div class="logo col-sm-4">  
-						<img class="logo" src="wp-content/themes/mytheme/assets/images/logo.png" alt="logo"/> 
+					<div class="logo col-sm-4"> 
+					<?php 
+                    if(function_exists('the_custom_logo')){
+                        the_custom_logo();
+                    }
+                    ?> 
 							<a class="site-title" href="index.html"></a>
 
 							<?php echo get_bloginfo('name')?>
@@ -36,7 +39,7 @@
 						<?php 
 							wp_nav_menu(
 								array(
-									'menu' => 'primary',
+									'menu' => 'main-menu',
 									'container' => '',
 									'theme_location' => 'primary',
 									'items_wrap' => '<ul id="" class="navbar">%3$s</ul>'

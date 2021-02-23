@@ -5,16 +5,20 @@ get_header();
    
    <main> 
 		<div class="container">
-			<?php echo do_shortcode('[slick-slider  dots="false" image_fit="true" variablewidth="false" sliderheight="700"]'); ?>
-
 			<div class="row">
-			<h1 class=''> <?php the_title(); ?></h1>
+				<h1 class=''> <?php the_title(); ?></h1>
 			</div>
 
+			<?php echo do_shortcode('[slick-slider  show_content="true" dots="false" image_fit="true" variablewidth="false" sliderheight="700"]'); ?>
+	
 			<div class='row about-me-section'>	
-				<div class="col-5  ">
+				<div class="col-5">
 							<div class="row">
-								<p class="about-me">About Me</p>
+								<p class="about-me">
+									<?php
+									echo get_the_title(101);
+									?>
+								 </p>
 							</div>
 
 							<div class="row">
@@ -29,21 +33,16 @@ get_header();
 							</div>
 				</div>
 
-					<div class="about-me-description col-7"> 
-							<p class="verticalLine">Lorem Ipsum is simply dummy text of the 
-								printing and typesetting industry. Lorem Ipsum has been the industry's 
-								standard dummy text ever since the 1500s, when an unknown printer took a 
-								galley of type and scrambled it to make a type specimen book. It has survived 
-								not only five centuries, but also the leap into electronic typesetting, 
-								remaining essentially unchanged. It was popularised in the 1960s with the
-								release of Letraset sheets containing Lorem Ipsum passages, and more recently 
-								with desktop publishing software like Aldus PageMaker including versions of 
-								Lorem Ipsum.</p> 
+					<div class="about-me-description col-7 verticalLine"> 
+					
+							<?php
+							$content = get_post_field('post_content', $post_id=101);
+							echo do_shortcode( $content );
+							?>
+						
 					</div>
 
 			</div>
-			
-
 
 			<div class="gallery">
 				<div class="gallery__item gallery__item--1">
@@ -77,15 +76,32 @@ get_header();
 						<img src="wp-content/themes/mytheme/assets/images/img10.jpg" class="gallery__img" alt="Image 10">
 				</div>
 			</div>
-                   
-			<?php
-			if( have_posts() ){
-				while( have_posts()){
-					the_post();
-					the_content();
-				}
-			}
-			?>
+
+
+            <div class="quotes">
+				<?php
+				if( have_posts() ){
+					while( have_posts()){
+						the_post();
+						the_content();
+					}
+				}?>
+				</div>
+			
+			<div class="footergallery ">
+				<?php
+					$attachments = get_children( array(
+						'post_parent' => get_the_ID(), 
+						'post_type' => 'attachment', 
+						'post_mime_type' =>'image') );
+					foreach ( $attachments as $attachment_id => $attachment ) { 
+						?>
+							<? echo wp_get_attachment_image( $attachment_id, array(425,341));
+						
+					}
+				?>
+			</div>
+		
 		</div>
 	</main>
 
